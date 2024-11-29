@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-const Blogs = () => {
-    const blogs = [
+const Blogs = ({ blogs }) => {
+    console.log("BlogsPage");
+    console.log(blogs);
+
+    const blogs1 = [
         {
             'id': 1,
             'title': 'News 1',
@@ -46,7 +49,9 @@ const Blogs = () => {
         },
     ]
 
-
+    const getCoverImageUrl = (coverImg) => {
+        return coverImg?.[0]?.url ? `http://localhost:1337${coverImg[0].url}` : "https://via.placeholder.com/300";
+    };
 
 
     return (
@@ -54,13 +59,27 @@ const Blogs = () => {
             <div className="max-w-[1240px] mx-auto">
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 ss:grid-cols-1 gap-8 px-4 text-black">
 
-                    {blogs.map((blog) =>
+                    {/* {blogs1.map((blog) =>
                         <Link to={`/blog/${blog.id}`}>
                             <div className="bg-white rounded-xl overflow-hidden drop-shadow-md">
                                 <img className="h-56 w-full object-cover" src={blog.coverImg} />
                                 <div className="p-8 ">
                                     <h3 className="font-bold text-2xl my-1">{blog.title}</h3>
                                     <p className="text-gray-500 text-xl">{blog.desc}</p>
+                                </div>
+                            </div>
+                        </Link>
+
+                    )} */}
+
+                    {blogs.data.map((blog) =>
+                        <Link key={blog.id} to={`/blog/${blog.id}`}>
+                            <div className="bg-white rounded-xl overflow-hidden drop-shadow-md">
+                                <img className="h-56 w-full object-cover" src={getCoverImageUrl(blog.coverImg)} alt={blog.coverImg?.[0]?.alternativeText || "Default alt text"} />
+
+                                <div className="p-8 ">
+                                    <h3 className="font-bold text-2xl my-1">{blog.blogTitle}</h3>
+                                    <p className="text-gray-500 text-xl">{blog.blogDescription}</p>
                                 </div>
                             </div>
                         </Link>
