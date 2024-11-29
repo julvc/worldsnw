@@ -1,7 +1,9 @@
-/** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,jsx}"],
-  mode: "jit",
+  content: [
+    "./index.html",
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "!./src/strapi/**/*" // Excluir la carpeta strapi
+  ],
   theme: {
     extend: {
       colors: {
@@ -24,4 +26,4 @@ export default {
     },
   },
   plugins: [],
-}
+};
