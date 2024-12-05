@@ -381,6 +381,9 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    authorDesc: Schema.Attribute.String;
+    authorImg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    authorName: Schema.Attribute.String;
     blogContentOne: Schema.Attribute.RichText;
     blogContentTwo: Schema.Attribute.RichText;
     blogDescription: Schema.Attribute.String;

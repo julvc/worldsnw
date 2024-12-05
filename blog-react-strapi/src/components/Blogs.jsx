@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 
 
 const Blogs = ({ blogs }) => {
-    console.log("BlogsPage");
-    console.log(blogs);
 
     const blogs1 = [
         {

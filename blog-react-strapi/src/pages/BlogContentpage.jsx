@@ -1,11 +1,12 @@
 import React from 'react'
 import { Navbar, Footer , BlogContent} from '../components'
 
-const BlogContentpage = () => {
+const BlogContentpage = (blogs) => {
+
     return (
         <div>
             <Navbar />
-            <BlogContent />
+            <BlogContent blogs={blogs}/>
             <Footer />
         </div>
     )

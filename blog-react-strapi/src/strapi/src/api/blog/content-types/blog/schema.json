@@ -38,6 +38,22 @@
     "coverVideoField": {
       "type": "customField",
       "customField": "plugin::video-field.video"
+    },
+    "authorImg": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "authorName": {
+      "type": "string"
+    },
+    "authorDesc": {
+      "type": "string"
     }
   }
 }
